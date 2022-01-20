@@ -183,6 +183,16 @@ def passwords_folder():
     else:
         print("You don't have supported OS for use this program if you want me to add your OS create request.")
 
+def end_or_repeat():
+    eor_ask = input("Do you want restart program or quit\n1.) For restart\n2.) For quit\n\n(1|2) : ")
+    if eor_ask == "1":
+        boot_pw_gen()
+    elif eor_ask == "2":
+        quit()
+    else:
+        clear_console()
+        end_or_repeat() 
+
 def boot_pw_gen():
     reset_generator()
     passwords_folder()
@@ -196,7 +206,6 @@ def boot_pw_gen():
     write_to_file()
     clear_console()
     print("Your passwords has been generated you can find it in : \n" + passwords_path_folder[0]+"\n")
+    end_or_repeat()
 
 boot_pw_gen()
-
-    
